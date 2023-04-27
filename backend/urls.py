@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from characters import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/player/<int:id>', views.getPlayer),
+    path('api/players/', views.getAllPlayer),
 ]
